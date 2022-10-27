@@ -23,7 +23,7 @@ describe('OrganizacionController (e2e)', () => {
 
     const newOrganizacion = {
       name: 'Pichincha',
-      status: 605,
+      state: 605,
     };
 
     const newOrganizacionRequest = await server.post('organizacion').type('form')
@@ -41,7 +41,7 @@ describe('OrganizacionController (e2e)', () => {
     const updateOrganizacion = {
       idOrganizacion: parseInt(newOrganizacionRequest.body.idOrganizacion),
       name: 'BP',
-      status: 606
+      state: 606
     };
     const updateOrganizacionRequest = await server.put(`/organizacion/${updateOrganizacion.idOrganizacion}`)
     .expect(200).type('form').send(updateOrganizacion);

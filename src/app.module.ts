@@ -5,7 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MockServiceController } from './mock-service/mock-service.controller';
 import { MockServiceService } from './mock-service/mock-service.service';
-import { OrganizacionModule } from './organizacion/organizacion.module';
+import { OrganizationModule } from './organization/organization.module';
 
 @Module({
   imports: [
@@ -20,7 +20,7 @@ import { OrganizacionModule } from './organizacion/organizacion.module';
       autoLoadEntities: true,
       synchronize: true,
     }),
-    OrganizacionModule,
+    OrganizationModule,
   ],
   controllers: [AppController, MockServiceController],
   providers: [AppService, MockServiceService],
