@@ -1,13 +1,13 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
-import { Organization } from './entities/organization.entity';
-import { OrganizationService } from './organization.service';
+import { Organization } from '../entities/organization.entity';
+import { OrganizationService } from '../organization.service';
 import {
   mockOrganizationsList,
   mockOrganizationRepository,
   createOrganizationDTO,
   singleOrganization,
-} from './test/organization.mock';
+} from './organization.mock';
 
 describe('OrganizationService', () => {
   let service: OrganizationService;
