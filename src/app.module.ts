@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { MockServiceController } from './mock-service/mock-service.controller';
 import { MockServiceService } from './mock-service/mock-service.service';
 import { OrganizationModule } from './organization/organization.module';
+import { TribeModule } from './tribe/tribe.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { OrganizationModule } from './organization/organization.module';
       // synchronize: true,
     }),
     OrganizationModule,
+    TribeModule,
   ],
   controllers: [AppController, MockServiceController],
   providers: [AppService, MockServiceService],

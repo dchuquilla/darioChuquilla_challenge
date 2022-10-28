@@ -10,4 +10,6 @@ export class Organization extends BaseEntity {
 
   @Column({ name: 'status', type: 'int' })
   status: number
+
+
 }
