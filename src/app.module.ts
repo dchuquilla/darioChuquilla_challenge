@@ -19,7 +19,7 @@ import { TribeModule } from './tribe/tribe.module';
         options: '--cluster=dario-chuquilla-db-392',
       },
       autoLoadEntities: true,
-      // synchronize: true,
+      synchronize: true,
     }),
     OrganizationModule,
     TribeModule,
