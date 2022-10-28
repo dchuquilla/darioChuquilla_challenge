@@ -9,35 +9,35 @@ import { Organization } from './entities/organization.entity';
 export class OrganizationService {
   constructor(
     @InjectRepository(Organization)
-    private readonly respository: Repository<Organization>,
+    private readonly repository: Repository<Organization>,
   ) {}
 
   create(createOrganizationDto: CreateOrganizationDto): Promise<Organization> {
-    const organization = this.respository.create(createOrganizationDto);
-    return this.respository.save(organization);
+    const organization = this.repository.create(createOrganizationDto);
+    return this.repository.save(organization);
   }
 
   findAll(): Promise<Organization[]> {
-    return this.respository.find();
+    return this.repository.find();
   }
 
   findOne(id: number): Promise<Organization> {
-    return this.respository.findOne({ where: {id: id} });
+    return this.repository.findOne({ where: {id: id} });
   }
 
   async update(
     id: number,
     updateOrganizationDto: UpdateOrganizationDto,
   ): Promise<Organization> {
-    const organization = await this.respository.preload({id: id, ...updateOrganizationDto});
+    const organization = await this.repository.preload({id: id, ...updateOrganizationDto});
     if(!organization) {
       throw new NotFoundException(`Organization ${id} not found`);
     }
-    return this.respository.save(organization);
+    return this.repository.save(organization);
   }
 
   async remove(id: number) {
     const organization: Organization = await this.findOne(id);
-    return this.respository.remove(organization);
+    return this.repository.remove(organization);
   }
 }

@@ -19,7 +19,7 @@ export class TribeController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.tribeService.findOne(+id);
+    return this.tribeService.findRepositoriesByTribeId(+id);
   }
 
   @Patch(':id')
